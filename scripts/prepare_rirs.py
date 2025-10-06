@@ -507,31 +507,31 @@ if __name__ == "__main__":
     [os.makedirs(p, exist_ok=True) for p in (source_path, sofa_path)]
 
     # METU
-    metu_path = source_path / METU_REMOTES["database_name"]
-    download_and_extract_remotes(METU_REMOTES["remotes"], metu_path, args.cleanup)
-    prepare_metu(metu_path, sofa_path)
+    # metu_path = source_path / METU_REMOTES["database_name"]
+    # download_and_extract_remotes(METU_REMOTES["remotes"], metu_path, args.cleanup)
+    # prepare_metu(metu_path, sofa_path)
 
-    # TAU
+    # # TAU
     tau_path = source_path / TAU_REMOTES["database_name"]
     download_tau(tau_path, TAU_REMOTES["remotes"], args.cleanup)
     prepare_tau(tau_path, sofa_path)
-
-    # ARNI
-    arni_path = source_path / ARNI_REMOTES["database_name"]
-    download_and_extract_remotes(ARNI_REMOTES["remotes"], arni_path, args.cleanup)
-    prepare_arni(arni_path, sofa_path)
-
-    # MOTUS
-    motus_path = source_path / MOTUS_REMOTES["database_name"]
-    download_and_extract_remotes(MOTUS_REMOTES["remotes"], motus_path, args.cleanup)
-    prepare_motus(motus_path, sofa_path)
-
-    ## RSOANU
-    rsoanu_path = source_path / RSOANU_REMOTES["database_name"]
-    download_and_extract_remotes(RSOANU_REMOTES["remotes"], rsoanu_path, args.cleanup)
-    prepare_rsoanu(rsoanu_path, sofa_path)
-
-    # DAGA DRIR
-    daga_path = source_path / DAGA_REMOTES["database_name"]
-    download_and_extract_remotes(DAGA_REMOTES["remotes"], daga_path, args.cleanup)
-    prepare_daga(daga_path, sofa_path)
+    
+    # # ARNI
+    # arni_path = source_path / ARNI_REMOTES["database_name"]
+    # download_and_extract_remotes(ARNI_REMOTES["remotes"], arni_path, args.cleanup)
+    # prepare_arni(arni_path, sofa_path)
+    #
+    # # MOTUS
+    # motus_path = source_path / MOTUS_REMOTES["database_name"]
+    # download_and_extract_remotes(MOTUS_REMOTES["remotes"], motus_path, args.cleanup)
+    # prepare_motus(motus_path, sofa_path)
+    #
+    # ## RSOANU
+    # rsoanu_path = source_path / RSOANU_REMOTES["database_name"]
+    # download_and_extract_remotes(RSOANU_REMOTES["remotes"], rsoanu_path, args.cleanup)
+    # prepare_rsoanu(rsoanu_path, sofa_path)
+    #
+    # # DAGA DRIR
+    # daga_path = source_path / DAGA_REMOTES["database_name"]
+    # download_and_extract_remotes(DAGA_REMOTES["remotes"], daga_path, args.cleanup)
+    # prepare_daga(daga_path, sofa_path)
