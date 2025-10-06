@@ -7,7 +7,7 @@ import pyroomacoustics as pra
 from pyroomacoustics import directivities as dr
 from pyroomacoustics.experimental.rt60 import measure_rt60
 import argparse
-from room_scaper import sofa_utils, tau_loading, room_sim
+from spatialscaper import sofa_utils, tau_utils, room_sim
 
 FOA_REAPER_PATH = "scripts/wav_rirs_foa"
 
@@ -167,7 +167,7 @@ else:
 for room_idx, room_name in enumerate(room_list):
     print(f"Loading room info for {room_name}...")
     # load paths
-    paths, paths_meta, room_meta = tau_loading.load_paths(room_idx, args.tau_db_dir)
+    paths, paths_meta, room_meta = tau_utils.load_paths(room_idx, args.tau_db_dir)
     t_type = room_meta["trajectory_type"]
 
     # sample rirs for rt60 to calculate MAC
@@ -175,7 +175,7 @@ for room_idx, room_name in enumerate(room_list):
         filename for filename in os.listdir(args.tau_db_dir) if room_name in filename
     ][0]
     rir_path = os.path.join(args.tau_db_dir, rir_file)
-    samples = tau_loading.load_rir_sample(rir_path, t_type=t_type)
+    samples = tau_utils.load_rir_sample(rir_path, t_type=t_type)
     rt = []
     for i in range(samples.shape[0]):
         rt.append(measure_rt60(samples[i], fs=args.sr, decay_db=args.decay_db))
